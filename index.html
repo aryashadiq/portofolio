@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Muhammad Arya Shadiq — Portfolio</title>
+  <meta name="description" content="Portfolio of Muhammad Arya Shadiq, Informatics Engineering student, web developer and data science enthusiast.">
+  <meta name="theme-color" content="#071638">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:ital,wght@0,500;0,700;1,600;1,800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="is-title">
+  <canvas id="sea" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <!-- Date / time HUD -->
+  <header class="hud" aria-label="Today">
+    <div class="hud-date">
+      <span class="hud-md" id="hudMd">--/--</span>
+      <span class="hud-day" id="hudDay">---</span>
+    </div>
+    <div class="hud-meta">
+      <span class="hud-time" id="hudTime">&nbsp;</span>
+      <span class="hud-moon"><i class="moon" id="moon"></i><span id="moonName"></span></span>
+    </div>
+  </header>
+
+  <div class="corner">
+    <button class="corner-btn music-toggle" id="musicToggle" type="button" aria-expanded="false" aria-controls="musicBox">♪ Color Your Night</button>
+    <button class="corner-btn sound-toggle" id="soundToggle" type="button" aria-pressed="true">Sound On</button>
+  </div>
+
+  <aside class="music-box" id="musicBox" aria-label="Music player" hidden>
+    <div class="mb-head">
+      <p class="mb-label">Now Playing</p>
+      <button class="mb-close" id="musicClose" type="button" aria-label="Hide player">✕</button>
+    </div>
+    <div class="mb-slot" id="musicSlot"></div>
+    <p class="mb-credit">Lotus Juice &amp; Azumi Takahashi · Persona 3 Reload OST · via Spotify</p>
+  </aside>
+
+  <!-- Title screen -->
+  <section class="title-screen" id="title" aria-label="Title screen">
+    <p class="title-kicker">Portfolio</p>
+    <h1 class="title-name"><span>Muhammad</span><span>Arya Shadiq</span></h1>
+    <p class="title-role">Web Developer · Data Science Enthusiast</p>
+    <button class="press-start" id="start" type="button">
+      <span class="ps-key">Press any key</span><span class="ps-tap">Tap to start</span>
+    </button>
+  </section>
+
+  <!-- Main menu -->
+  <main class="menu-screen" id="menu" inert>
+    <div class="menu-bg-name" aria-hidden="true">ARYA</div>
+
+    <div class="menu-intro">
+      <p class="menu-kicker">Informatics Engineering Student</p>
+      <p class="menu-name">Muhammad<br>Arya Shadiq</p>
+      <p class="menu-role">Web Developer · Data Science Enthusiast</p>
+    </div>
+
+    <nav class="main-menu" aria-label="Main menu">
+      <ul>
+        <li style="--i:0"><button class="menu-item" type="button" data-target="about"><span class="mi-text">About</span><span class="mi-sub">Status</span></button></li>
+        <li style="--i:1"><button class="menu-item" type="button" data-target="skills"><span class="mi-text">Skills</span><span class="mi-sub">Social Link</span></button></li>
+        <li style="--i:2"><button class="menu-item" type="button" data-target="projects"><span class="mi-text">Projects</span><span class="mi-sub">Compendium</span></button></li>
+        <li style="--i:3"><button class="menu-item" type="button" data-target="contact"><span class="mi-text">Contact</span><span class="mi-sub">Phone</span></button></li>
+      </ul>
+    </nav>
+
+    <p class="hint" aria-hidden="true"><kbd>↑</kbd><kbd>↓</kbd> Select &nbsp; <kbd>Enter</kbd> Open &nbsp; <kbd>Esc</kbd> Back</p>
+  </main>
+
+  <!-- About -->
+  <section class="panel" id="about" role="dialog" aria-modal="true" aria-labelledby="aboutTitle" inert>
+    <div class="panel-head">
+      <h2 class="panel-title" id="aboutTitle"><small>Status</small><span>About</span></h2>
+      <button class="back-btn" type="button">◀ Back <kbd>Esc</kbd></button>
+    </div>
+    <div class="panel-body about-grid">
+      <aside class="status-card">
+        <div class="sc-mono" aria-hidden="true">AS</div>
+        <p class="sc-label">Arcana</p>
+        <p class="sc-arcana">0 · The Fool</p>
+        <p class="sc-name">Muhammad Arya Shadiq</p>
+        <dl class="sc-stats">
+          <div><dt>Class</dt><dd>Informatics Engineering</dd></div>
+          <div><dt>Focus</dt><dd>Data Analytics · Data Science</dd></div>
+          <div><dt>Next goal</dt><dd>Data Analyst</dd></div>
+          <div><dt>Long term</dt><dd>Data Scientist</dd></div>
+        </dl>
+      </aside>
+      <div class="about-text">
+        <p class="lead">I’m an Informatics Engineering student with an interest in <em>Data Analytics</em> and <em>Data Science</em>. I enjoy working with data, finding patterns, and learning how data can be used to solve real-world problems.</p>
+        <p>I’m currently developing my skills in Python, SQL, data visualization, data processing, and machine learning.</p>
+        <p>During my studies, I’ve worked on several projects involving data analysis and machine learning, including income category prediction (&gt;50K or &lt;=50K) using the Adult Income Dataset, and a plant disease classification project using computer vision and PyTorch. These projects gave me hands-on experience in data collection, preprocessing, model development, and interpreting results.</p>
+        <p>My goal is to start my career as a <em>Data Analyst</em>, where I can apply my technical background while developing stronger analytical and business skills. In the long term, I want to grow toward Data Science and build practical, data-driven solutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="panel" id="skills" role="dialog" aria-modal="true" aria-labelledby="skillsTitle" inert>
+    <div class="panel-head">
+      <h2 class="panel-title" id="skillsTitle"><small>Social Link</small><span>Skills</span></h2>
+      <button class="back-btn" type="button">◀ Back <kbd>Esc</kbd></button>
+    </div>
+    <ol class="panel-body sl-list" id="skillList"></ol>
+  </section>
+
+  <!-- Projects -->
+  <section class="panel" id="projects" role="dialog" aria-modal="true" aria-labelledby="projectsTitle" inert>
+    <div class="panel-head">
+      <h2 class="panel-title" id="projectsTitle"><small>Compendium</small><span>Projects</span></h2>
+      <button class="back-btn" type="button">◀ Back <kbd>Esc</kbd></button>
+    </div>
+    <div class="panel-body card-grid" id="projectGrid"></div>
+  </section>
+
+  <!-- Contact -->
+  <section class="panel" id="contact" role="dialog" aria-modal="true" aria-labelledby="contactTitle" inert>
+    <div class="panel-head">
+      <h2 class="panel-title" id="contactTitle"><small>Phone</small><span>Contact</span></h2>
+      <button class="back-btn" type="button">◀ Back <kbd>Esc</kbd></button>
+    </div>
+    <div class="panel-body">
+      <p class="contact-lead">Open to Data Analyst internships, entry-level roles, and web projects. Pick a line.</p>
+      <ul class="contact-list">
+        <li><a href="mailto:mshadiq89@gmail.com"><span class="cl-label">Email</span><span class="cl-value">mshadiq89@gmail.com</span></a></li>
+        <li><a href="https://github.com/aryashadiq" target="_blank" rel="noopener"><span class="cl-label">GitHub</span><span class="cl-value">github.com/aryashadiq</span></a></li>
+        <li><a href="https://www.linkedin.com/in/muhammad-arya-shadiq-062aaa42b/" target="_blank" rel="noopener"><span class="cl-label">LinkedIn</span><span class="cl-value">Muhammad Arya Shadiq</span></a></li>
+      </ul>
+      <p class="footnote">Fan-made design inspired by Persona 3. Not affiliated with ATLUS or SEGA.</p>
+    </div>
+  </section>
+
+  <div class="wipe" id="wipe" aria-hidden="true"><i></i><i></i></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
