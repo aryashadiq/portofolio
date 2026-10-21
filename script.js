@@ -30,7 +30,7 @@ const PROJECTS = [
     title: "Plant Disease Classification",
     desc: "Classifies plant diseases from leaf images with a computer-vision model built in PyTorch, from data collection to evaluation.",
     tags: ["PyTorch", "Computer Vision", "Deep Learning"],
-    link: "https://github.com/aryashadiq",
+    link: "https://github.com/aryashadiq/plant-disease-RESTNET50",
   },
 ];
 
