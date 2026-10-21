@@ -6,7 +6,9 @@
   <title>Muhammad Arya Shadiq — Portfolio</title>
   <meta name="description" content="Portfolio of Muhammad Arya Shadiq, Informatics Engineering student, web developer and data science enthusiast.">
   <meta name="theme-color" content="#071638">
-  <link rel="icon" type="image/x-icon" href="fajri-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:ital,wght@0,500;0,700;1,600;1,800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
@@ -44,17 +46,25 @@
 
   <!-- Title screen -->
   <section class="title-screen" id="title" aria-label="Title screen">
-    <p class="title-kicker">Portfolio</p>
-    <h1 class="title-name"><span>Muhammad</span><span>Arya Shadiq</span></h1>
-    <p class="title-role">Web Developer · Data Science Enthusiast</p>
-    <button class="press-start" id="start" type="button">
-      <span class="ps-key">Press any key</span><span class="ps-tap">Tap to start</span>
-    </button>
+    <div class="title-moon" aria-hidden="true"><i></i></div>
+    <div class="title-inner">
+      <p class="title-kicker">Portfolio</p>
+      <h1 class="title-name"><span>Muhammad</span><span>Arya Shadiq</span></h1>
+      <span class="title-streak" aria-hidden="true"></span>
+      <p class="title-role">Web Developer · Data Science Enthusiast</p>
+      <button class="press-start" id="start" type="button">
+        <span class="ps-key">Press any key</span><span class="ps-tap">Tap to start</span>
+      </button>
+    </div>
+    <div class="letterbox" aria-hidden="true"><i></i><i><span>Muhammad Arya Shadiq · Portfolio · Inspired by Persona 3 Reload</span></i></div>
   </section>
 
   <!-- Main menu -->
   <main class="menu-screen" id="menu" inert>
     <div class="menu-bg-name" aria-hidden="true">ARYA</div>
+    <div class="menu-ticker" aria-hidden="true">
+      <div><span>Arya Shadiq · Data Analytics · Web Development · Machine Learning · </span><span>Arya Shadiq · Data Analytics · Web Development · Machine Learning · </span></div>
+    </div>
 
     <div class="menu-intro">
       <p class="menu-kicker">Informatics Engineering Student</p>
@@ -92,6 +102,8 @@
           <div><dt>Next goal</dt><dd>Data Analyst</dd></div>
           <div><dt>Long term</dt><dd>Data Scientist</dd></div>
         </dl>
+        <p class="sc-label sc-section">Social Stats</p>
+        <ul class="ss-list" id="socialStats"></ul>
       </aside>
       <div class="about-text">
         <p class="lead">I’m an Informatics Engineering student with an interest in <em>Data Analytics</em> and <em>Data Science</em>. I enjoy working with data, finding patterns, and learning how data can be used to solve real-world problems.</p>
@@ -108,7 +120,7 @@
       <h2 class="panel-title" id="skillsTitle"><small>Social Link</small><span>Skills</span></h2>
       <button class="back-btn" type="button">◀ Back <kbd>Esc</kbd></button>
     </div>
-    <ol class="panel-body sl-list" id="skillList"></ol>
+    <ol class="panel-body tarot-grid" id="skillList"></ol>
   </section>
 
   <!-- Projects -->
@@ -137,7 +149,7 @@
     </div>
   </section>
 
-  <div class="wipe" id="wipe" aria-hidden="true"><i></i><i></i></div>
+  <div class="shatter" id="shatter" aria-hidden="true"></div>
 
   <script src="script.js"></script>
 </body>
